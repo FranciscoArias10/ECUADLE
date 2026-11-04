@@ -150,9 +150,12 @@ body {
 }
 
 .theme-light .header-navbar {
-  background: #FFD100;
-  border-bottom: 4px solid var(--ec-blue);
-  box-shadow: 0 4px 18px rgba(0, 34, 102, 0.16);
+  background: #F8EFD2;
+  background: rgba(248, 239, 210, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 3px solid var(--ec-blue);
+  box-shadow: 0 4px 16px rgba(0, 34, 102, 0.10);
 }
 
 .theme-light .header-title {
