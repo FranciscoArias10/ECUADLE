@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <clipPath id="flag-clip">
+      <rect width="64" height="64" rx="12" />
+    </clipPath>
+  </defs>
+  <g clipPath="url(#flag-clip)">
+    <!-- Yellow top half (50%) -->
+    <rect x="0" y="0" width="64" height="32" fill="#FFD100" />
+    <!-- Blue 3rd quarter (25%) -->
+    <rect x="0" y="32" width="64" height="16" fill="#0033A0" />
+    <!-- Red bottom quarter (25%) -->
+    <rect x="0" y="48" width="64" height="16" fill="#CE1126" />
+    
+    <!-- Escudo center -->
+    <g transform="translate(32, 32)">
+      <!-- Condor wings -->
+      <path d="M-10,-9 C-7,-13 -3,-14 0,-11 C3,-14 7,-13 10,-9 C7,-9 3,-8 0,-8 C-3,-8 -7,-9 -10,-9 Z" fill="#2C2C2C" />
+      <path d="M-2,-12 C-1,-14 1,-14 2,-12 Z" fill="#D32F2F" />
+      
+      <!-- Side flags -->
+      <path d="M-8,-5 L-11,7 L-8,8 L-6,0 Z" fill="#CE1126" />
+      <path d="M8,-5 L11,7 L8,8 L6,0 Z" fill="#CE1126" />
+      <path d="M-7,-6 L-10,5 L-7,6 L-5,-1 Z" fill="#0033A0" />
+      <path d="M7,-6 L10,5 L7,6 L5,-1 Z" fill="#0033A0" />
+      <path d="M-6,-7 L-9,3 L-6,4 L-4,-2 Z" fill="#FFD100" />
+      <path d="M6,-7 L9,3 L6,4 L4,-2 Z" fill="#FFD100" />
+
+      <!-- Oval shield -->
+      <ellipse cx="0" cy="1" rx="7" ry="8.5" fill="#C69214" stroke="#7A5200" stroke-width="0.8" />
+      <ellipse cx="0" cy="1" rx="5.8" ry="7.2" fill="#58A5F0" />
+      <!-- Golden sun -->
+      <path d="M-5,-1.5 Q0,-0.5 5,-1.5" stroke="#FFD100" stroke-width="1.2" fill="none" />
+      <!-- Chimborazo -->
+      <path d="M-5.2,6.5 L-2,1.5 L2,1.5 L5.2,6.5 Z" fill="#2E7D32" />
+      <path d="M-2.2,2.2 L0,0.8 L2.2,2.2 L1.2,3.2 L-1.2,3.2 Z" fill="#FFFFFF" />
+      <!-- River -->
+      <path d="M-4,6.5 Q0,4 4,6.5 L4,7.8 Q0,5.8 -4,7.8 Z" fill="#1565C0" />
+    </g>
+  </g>
+  <rect width="64" height="64" rx="12" fill="none" stroke="#002266" stroke-width="2" />
+</svg>
