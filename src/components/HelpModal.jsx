@@ -30,7 +30,7 @@ export default function HelpModal({ isOpen, onClose }) {
               <div className="example-tile">O</div>
             </div>
             <p>
-              <strong>AMARILLO:</strong> La letra <strong>C</strong> esta en la palabra y en la posicion correcta (esta bien).
+              <strong className="legend-yellow">AMARILLO:</strong> La letra <strong>C</strong> esta en la palabra y en la posicion correcta (esta bien).
             </p>
 
             <div className="example-row">
@@ -41,7 +41,7 @@ export default function HelpModal({ isOpen, onClose }) {
               <div className="example-tile">A</div>
             </div>
             <p>
-              <strong>AZUL:</strong> La letra <strong>I</strong> esta en la palabra, pero en una posicion distinta.
+              <strong className="legend-blue">AZUL:</strong> La letra <strong>I</strong> esta en la palabra, pero en una posicion distinta.
             </p>
 
             <div className="example-row">
@@ -52,7 +52,7 @@ export default function HelpModal({ isOpen, onClose }) {
               <div className="example-tile">A</div>
             </div>
             <p>
-              <strong>ROJO:</strong> La letra <strong>T</strong> no es la correcta (no esta en la palabra).
+              <strong className="legend-red">ROJO:</strong> La letra <strong>T</strong> no es la correcta (no esta en la palabra).
             </p>
           </div>
 

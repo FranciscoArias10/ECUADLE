@@ -4,6 +4,7 @@ import Board from './components/Board';
 import Keyboard from './components/Keyboard';
 import HelpModal from './components/HelpModal';
 import StatsModal from './components/StatsModal';
+import ShareModal from './components/ShareModal';
 import Toast from './components/Toast';
 import { getDailyWord, normalizeWord, VALID_SET } from './data/words';
 
@@ -32,6 +33,7 @@ export default function App() {
 
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isStatsOpen, setIsStatsOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('ecuadle_theme') || 'dark';
@@ -256,10 +258,11 @@ export default function App() {
       if (e.key === 'Escape') {
         setIsHelpOpen(false);
         setIsStatsOpen(false);
+        setIsShareModalOpen(false);
         return;
       }
 
-      if (isHelpOpen || isStatsOpen) return;
+      if (isHelpOpen || isStatsOpen || isShareModalOpen) return;
 
       if (e.key === 'Enter') {
         handleKeyPress('ENVIAR');
@@ -272,34 +275,11 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyPress, isHelpOpen, isStatsOpen]);
+  }, [handleKeyPress, isHelpOpen, isStatsOpen, isShareModalOpen]);
 
-  // Share text builder (ZERO emojis)
+  // Open the Image & Result Share Modal
   const handleShare = () => {
-    const won = isWinner;
-    const score = won ? `${guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`;
-
-    let boardSummary = '';
-    guesses.forEach((g) => {
-      const line = g.result.map((r) => {
-        if (r === 'correct') return '[A]';
-        if (r === 'present') return '[Az]';
-        return '[R]';
-      }).join(' ');
-      boardSummary += line + '\n';
-    });
-
-    const shareText = `ECUADLE #${dayNumber} ${score}\n\n${boardSummary}\n[A]=Amarillo [Az]=Azul [R]=Rojo`;
-
-    if (navigator.share) {
-      navigator.share({ text: shareText }).catch(() => {
-        navigator.clipboard.writeText(shareText);
-        showToast('Copiado al portapapeles');
-      });
-    } else {
-      navigator.clipboard.writeText(shareText);
-      showToast('Copiado al portapapeles');
-    }
+    setIsShareModalOpen(true);
   };
 
   return (
@@ -341,6 +321,16 @@ export default function App() {
         isWinner={isWinner}
         wordData={wordData}
         onShare={handleShare}
+      />
+
+      <ShareModal 
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+        wordData={wordData}
+        guesses={guesses}
+        isWinner={isWinner}
+        dayNumber={dayNumber}
+        onShowToast={showToast}
       />
     </div>
   );

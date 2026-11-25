@@ -86,8 +86,23 @@ export default function StatsModal({
                 <div className="countdown-digits">{timeLeft}</div>
               </div>
 
-              <button className="btn-blue btn-full" onClick={onShare}>
-                COMPARTIR RESULTADO
+              <button 
+                className="btn-blue btn-full" 
+                onClick={onShare}
+                style={{
+                  background: 'linear-gradient(135deg, #FFD100 0%, #F59E0B 100%)',
+                  color: '#0F172A',
+                  fontWeight: '900',
+                  fontSize: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  boxShadow: '0 4px 15px rgba(255, 209, 0, 0.35)',
+                  border: '2px solid #8C6500'
+                }}
+              >
+                <span>📸</span> COMPARTIR FOTO Y RESULTADO
               </button>
             </>
           )}
